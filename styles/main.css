@@ -58,6 +58,21 @@ body {
     color: rgb(233,50,117);
 }
 
+/* Added to change the links-container to white when the mouse clicks */
+.links-container .navbar-link:active {
+    background-color: white;
+}
+
+/* The below change was commented out as it is not necessary.  As soon as the mouse */
+/* pointer hovers over the link, the color changes to this same color purple   */
+/* defined in this commented out code.  There is no way to click the mouse     */
+/* without first hovering over the link.  Therefore this code is redundant to  */
+/* in order achieve the desired result.                                        */
+/* Added to change the link to purple when the mouse clicks
+.links-container .navbar-link:active {
+    color: rgb(233,50,117);
+}*/
+
 .container {
     margin: 0 auto;
     max-width: 64rem;
