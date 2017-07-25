@@ -28,6 +28,21 @@ var albumMarconi = {
      ]
 };
 
+var albumTheMorons = {
+    title: 'Take Chattanooga',
+    artist: 'The Morons',
+    label: 'Duh',
+    year: '2017',
+    albumArtUrl: 'assets/images/album_covers/18.png',
+    songs: [
+        { title: "Everythings FUBAR", duration: '6:39' },
+        { title: "It's SNAFU, Man!", duration: '4:44' },
+        { title: "She's 8UP", duration: "8:88" },
+        { title: "They 86'd Us", duration: "8:60" },
+        { title: "Tango Uniform, Goodbye!", duration: "1:23"}
+    ]
+};
+
 var createSongRow = function(songNumber, songName, songLength) {
      var template =
         '<tr class="album-view-song-item">'
@@ -61,4 +76,23 @@ var setCurrentAlbum = function(album) {
 
 window.onload = function() {
      setCurrentAlbum(albumPicasso);
+};
+
+// If album cover is clicked, the defined albums are toggled
+var x = document.getElementsByTagName("img")[1];
+var tracker = 1;
+
+x.addEventListener("click", albumToggle);
+
+function albumToggle(){
+    if (tracker === 0) {
+       setCurrentAlbum(albumPicasso);
+       tracker++;
+    } else if (tracker === 1) {
+       setCurrentAlbum(albumMarconi);
+       tracker++;
+    } else if (tracker === 2) {
+       setCurrentAlbum(albumTheMorons);
+       tracker = 0;
+    }
 };
