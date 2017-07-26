@@ -74,25 +74,20 @@ var setCurrentAlbum = function(album) {
      }
 };
 
+//var x = document.getElementsByClassName("album-cover-art")[0];
+var albumList = [albumPicasso, albumMarconi, albumTheMorons]
+var tracker = 1;
+
 window.onload = function() {
      setCurrentAlbum(albumPicasso);
+
+     document.getElementsByClassName("album-cover-art")[0].addEventListener("click", function() {
+         setCurrentAlbum(albumList[tracker]);
+         tracker++;
+         if (tracker === albumList.length) {
+            tracker = 0;
+         }
+     });
 };
 
 // If album cover is clicked, the defined albums are toggled
-var x = document.getElementsByTagName("img")[1];
-var tracker = 1;
-
-x.addEventListener("click", albumToggle);
-
-function albumToggle(){
-    if (tracker === 0) {
-       setCurrentAlbum(albumPicasso);
-       tracker++;
-    } else if (tracker === 1) {
-       setCurrentAlbum(albumMarconi);
-       tracker++;
-    } else if (tracker === 2) {
-       setCurrentAlbum(albumTheMorons);
-       tracker = 0;
-    }
-};
