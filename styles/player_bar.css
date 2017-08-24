@@ -8,7 +8,7 @@
      z-index: 100;
  }
 
-player-bar a {
+.player-bar a {
      font-size: 1.1rem;
      vertical-align: middle;
 }
